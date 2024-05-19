@@ -1,0 +1,9 @@
+<design_module> ::= <start_module>  <statement>  <end_module>
+<statement> ::= if <case> else Res "<=" <output>";"  end if;
+<case> ::= (Sel(1)=<bit>) and (Sel(0)=<bit>) then Res "<=" <output>; | (Sel(1)=<bit>) and (Sel(0)=<bit>) then Res "<=" <output>; elsif <case>
+<output> ::= <input> <op> <input> | (<input>) <op> (<output>) | (not <input>) <op> (X\"0\" & <bit>)
+<bit> ::= "'0'" | "'1'"
+<input> ::= a | b
+<op> ::= + | and | or
+<start_module> ::=architecture behv of ALU is begin process(a,b,Sel) begin 
+<end_module> ::=end process; end behv";"
