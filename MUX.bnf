@@ -1,1 +1,9 @@
-
+<design_module> ::= <start_module>  <statement>  <end_module>
+<statement> ::=if <case>  else <output> end if;
+<case> ::= (a<op>b) then  <output> | (a<op>b) then  <output>  elsif <case>
+<output> ::= less "<=" <bit>;  equal "<=" <bit>;  greater "<=" <bit>;
+<op> ::= "<" | "=" | ">"
+<input> ::= a | b
+<bit> ::= '0' | '1'
+<start_module> ::=architecture behv of Comparator is begin process(a,b) begin 
+<end_module> ::=end process; end behv;
