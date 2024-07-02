@@ -1,9 +1,7 @@
-⟨design module⟩ ::= ⟨start module⟩⟨statement⟩⟨end module⟩
-⟨statement⟩ ::= if⟨case⟩ else y "<=" ⟨data⟩; end if;
-⟨case⟩ ::= (s(2)=⟨addr⟩) and (s(1)=⟨addr⟩) and (s(0)=⟨addr⟩) then y"<="⟨data⟩;
-| (s(2)=⟨addr⟩) and (s(1)=⟨addr⟩) and (s(0)=⟨addr⟩) then y"<="⟨data⟩;
-elsif⟨case⟩
-⟨addr⟩ ::= ‘0’ | ‘1’
-⟨data⟩ ::= i(0) | i(1) | i(2) | i(3) | i(4) | i(5) | i 6) | i(7)
-⟨start module⟩ ::= architecture behv of mux is begin process(i,s) begin
-⟨end module⟩ ::= end process;end behv;
+<design_module> ::= <start_module>  <statement>  <end_module>
+<statement> ::=if <case> else y "<=" <data>; end if;
+<case> ::= (s(2)=<address>) and (s(1)=<address>) and (s(0)=<address>) then y "<=" <data>; | (s(2)=<address>) and (s(1)=<address>) and (s(0)=<address>) then y "<=" <data>; elsif <case>
+<address> ::= '0' | '1'
+<data> ::= i(0) | i(1) | i(2) | i(3) | i(4) | i(5) | i(6) | i(7)
+<start_module> ::=architecture behave of mux is begin process(i,s) begin 
+<end_module> ::=end process; end behave;
