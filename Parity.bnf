@@ -1,1 +1,9 @@
-
+<design_module> ::= <start_module>  <statement>  <end_module>
+<statement> ::= parity_check "<=" <expr>; <output>
+<expr> ::= <input> <op> <input> | (<expr>) <op> <input> | (<expr>) <op> (<expr>)
+<output> ::= even_out "<=" parity_check; odd_out "<=" not(parity_check);
+<op> ::=  or | xor
+<input> ::= i(0) | i(1) | i(2) | i(3) | i(4)
+<start_module> ::= architecture behave of parity is <signal> begin
+<signal> ::= signal parity_check : std_logic;
+<end_module> ::= end behave;
